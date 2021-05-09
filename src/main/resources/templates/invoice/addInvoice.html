@@ -10,20 +10,20 @@
 <link data-th-href="@{/css/combo-box-search.css}" media="all" rel="stylesheet" type="text/css" />
 <link data-th-href="@{/css/modal.css}" media="all" rel="stylesheet" type="text/css" />
 <div class="container-fluid">
-  <div class="card bg-light m-4">
+  <div class="card m-4" style="background-color: rgba(255, 255, 255, 0.2); color: navy; font-size : 17px;border-radius: 30px; width: 1300px; height: 1000px;">
     <div class="card-body">
       <!--Creates the popup body-->
-      <div class="popup-overlay">
+      <div class="popup-overlay" style="width: 100%; height: 100%; background-color: #fcfcfc">
         <!--Creates the popup content-->
-        <div class="popup-content">
+        <div class="popup-content" style="width: 600px; height: 300px; background-color: #98b0e0; border-color: #98b0e0">
           <div class="form-row">
             <!--item name-->
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-8">
               <label for="itemName" class="text-dark">Item Name :</label>
               <input id="itemName" class="form-control" type="text" readonly/>
             </div>
             <!--Available Quantity-->
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
               <label for="abQuantity" class="text-dark">Available Quantity :</label>
               <input id="abQuantity" class="form-control" type="text" readonly/>
             </div>
@@ -63,6 +63,9 @@
         </div>
       </div>
 
+      <br>
+      <br>
+
       <form action="/invoice" method="post" data-th-object="${invoice}">
         <!--customer list-->
         <div class="form-group row">
@@ -81,7 +84,7 @@
             </select>
           </div>
           <div class="col-4">
-            <a class="btn btn-sm btn-outline-success float-right" href="/customer/add">Add
+            <a class="btn btn-md btn-outline-dark float-right" href="/customer/add">Add
               customer</a>
           </div>
         </div>
@@ -91,7 +94,7 @@
           <div class="col-1">
             <label class="control-label" for="item">Items</label>
           </div>
-          <div class="col-11">
+          <div class="col-7">
             <select id="item" class="form-control form-control-sm" tabindex="9">
               <option value="">Please select</option>
               <option data-th-each="ledger : ${ledgers}"
@@ -347,8 +350,7 @@
             <button id="submit" class="btn btn-success ml-5 float-right" tabindex="12"
                     type="submit">
               <i class="fa fa-save" style="font-size: 20px"></i>&nbsp;&nbsp;<span
-                    data-th-text="${'Save'}"
-            ></span>
+                    data-th-text="${'Save'}"></span>
             </button>
           </div>
         </div>
